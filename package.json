@@ -1,0 +1,28 @@
+{
+  "name": "super-auto-pets",
+  "version": "1.0.0",
+  "private": true,
+  "description": "super-auto-pets",
+  "author": "dkolonay",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^4.8.0",
+    "gatsby-plugin-manifest": "^4.8.1",
+    "gatsby-plugin-react-helmet": "^5.8.0",
+    "gatsby-plugin-sass": "^5.8.0",
+    "gatsby-plugin-sitemap": "^5.8.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.49.9"
+  }
+}
