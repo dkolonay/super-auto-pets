@@ -25,6 +25,10 @@ const IndexPage = ({ data }) => {
     console.log('loaded');
     setHeroLoaded(true);
   }
+  const handleError = () => {
+    console.log('error');
+    setHeroLoaded(true);
+  }
   return (
     <React.Fragment>
       {/* <Helmet
@@ -32,11 +36,11 @@ const IndexPage = ({ data }) => {
       >
       </Helmet> */}
 
-      <main className={styles.homePage}>
+      <main>
         <div className={`${styles.hero} ${heroLoaded ? styles.heroLoaded : ''}`}>
           <img className={styles.logoTitle} src={logo} alt="Super Auto Pets"></img>
           <Battle data={data} />
-          <img src={backgroundImage} className={styles.backgroundImage} onLoad={loadHero}></img>
+          <img src={backgroundImage} alt="Forest Background" className={styles.backgroundImage} onLoad={loadHero} onError={handleError}></img>
         </div>
 
         <section className={styles.videoContainer} >
