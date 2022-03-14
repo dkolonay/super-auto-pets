@@ -22,6 +22,7 @@ import Battle from "../components/Battle/Battle";
 const IndexPage = ({ data }) => {
   const [heroLoaded, setHeroLoaded] = useState(false);
   const loadHero = () => {
+    console.log('loaded');
     setHeroLoaded(true);
   }
   return (
