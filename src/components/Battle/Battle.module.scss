@@ -1,0 +1,25 @@
+.battle{
+    height: 150px;
+    min-height: 150px;
+    width: 470px;
+    bottom: 15%;
+    left: calc(50% - 235px);
+    position: absolute;
+    z-index: 1;
+    display: flex;
+}  
+
+@media(max-width: 420px){
+    .battle{
+        width: 400px;
+        left: calc(50% - 200px);
+    }
+}
+
+@media(max-width: 360px){
+    .battle{
+        width: 320px;
+        left: calc(50% - 160px);
+    }
+}
+    
