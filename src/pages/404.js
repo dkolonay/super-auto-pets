@@ -1,52 +1,31 @@
+//React
 import * as React from "react"
+
+//Gatsby
 import { Link } from "gatsby"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+//Styles
+import * as styles from './404.module.scss';
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+//Images
+import Turtle from '../images/pets/Turtle.png';
 
-// markup
-const NotFoundPage = () => {
+
+const NotFoundPage = ({ location }) => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
+    <main>
+      <div className={styles.errorCard}>
+        <h1>Page Not Found...</h1>
+        <div className={styles.turtleContainer}>
+          <img src={Turtle} alt="Turtle"></img>
+          <p className={styles.questionMark}>?</p>
+          <p className={styles.questionMark}>?</p>
+        </div>
+
+        <p>"{location.origin}/{location.pathname}" is not a page on this site. Head back to the home page to find what you're looking for.</p>
         <Link to="/">Go home</Link>.
-      </p>
+      </div>
+
     </main>
   )
 }

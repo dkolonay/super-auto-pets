@@ -28,11 +28,8 @@ const IndexPage = ({ data }) => {
   }
   useEffect(()=>{
     if(imageRef.current?.complete){
-      console.log('loaded from useEffect')
       loadHero();
-    } else{
-      console.log('waiting for load')
-    }
+    } 
   }, [])
   return (
     <Fragment>

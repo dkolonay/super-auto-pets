@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-      title: `super-auto-pets`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Super Auto Pets`,
+    siteUrl: `https://adoring-hamilton-015d1c.netlify.app/`,
+    description: `Play Super Auto Pets by the animal fans at Team Wood Games!`
   },
   plugins: [
     {
