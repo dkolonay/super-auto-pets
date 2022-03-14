@@ -1,6 +1,6 @@
 //React
 import * as React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect, Fragment } from "react";
 
 //Gatsby
 import { graphql } from "gatsby";
@@ -21,16 +21,21 @@ import Battle from "../components/Battle/Battle";
 
 const IndexPage = ({ data }) => {
   const [heroLoaded, setHeroLoaded] = useState(false);
+  const imageRef = useRef();
   const loadHero = () => {
     console.log('loaded');
     setHeroLoaded(true);
   }
-  const handleError = () => {
-    console.log('error');
-    setHeroLoaded(true);
-  }
+  useEffect(()=>{
+    if(imageRef.current?.complete){
+      console.log('loaded from useEffect')
+      loadHero();
+    } else{
+      console.log('waiting for load')
+    }
+  }, [])
   return (
-    <React.Fragment>
+    <Fragment>
       {/* <Helmet
         title={"Super Auto Pets"}
       >
@@ -40,7 +45,7 @@ const IndexPage = ({ data }) => {
         <div className={`${styles.hero} ${heroLoaded ? styles.heroLoaded : ''}`}>
           <img className={styles.logoTitle} src={logo} alt="Super Auto Pets"></img>
           <Battle data={data} />
-          <img src={backgroundImage} alt="Forest Background" className={styles.backgroundImage} onLoad={loadHero} onError={handleError}></img>
+          <img src={backgroundImage} alt="Forest Background" ref={imageRef} className={styles.backgroundImage} onLoad={loadHero}></img>
         </div>
 
         <section className={styles.videoContainer} >
@@ -147,7 +152,7 @@ const IndexPage = ({ data }) => {
       <footer>
         <p>&copy;Copyright here </p>
       </footer>
-    </React.Fragment>
+    </Fragment>
   )
 }
 
