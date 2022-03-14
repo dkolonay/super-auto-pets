@@ -87,7 +87,7 @@ const Battle = ({ data }) => {
         else  {
             timeout = setTimeout(() => {
                 setAnimating(true);
-            }, 500)
+            }, 1000)
 
         }
         return () => { clearTimeout(timeout) }
