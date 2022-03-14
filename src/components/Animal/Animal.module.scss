@@ -59,7 +59,7 @@
     .animalOne,
     .animalTwo{
         opacity: 0;
-        transform: scale(0);
+        transform: scale(0) translateZ(0);
         height: 150px;
         width: 150px;
         display: inline-block;
@@ -156,20 +156,20 @@ p{
 @keyframes popIn {
     0%{
         opacity: 0;
-        transform: scale(0);
+        transform: scale(0) translateZ(0);
     }
     20%{
         opacity: 1; 
-        transform: scale(0.3);
+        transform: scale(0.3) translateZ(0);
     }
     80%{
         opacity: 1;
-        transform: scale(1.1); 
+        transform: scale(1.1) translateZ(0); 
     }
 
     100%{
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) translateZ(0);
     }
 }
 
@@ -177,24 +177,24 @@ p{
     0%{
         transform-origin: var(--slide-distance);
         opacity: 1;
-        transform: rotateZ(0deg) scale(1) translateX(var(--slide-distance)) translateY(0);
+        transform: rotateZ(0deg) scale(1) translateX(var(--slide-distance)) translateY(0) translateZ(0);
     }
     30%, 50%{
         transform-origin: var(--slide-distance);
         opacity: 1; 
-        transform: rotateZ(0deg) scale(1.1) translateX(var(--slide-distance)) translateY(0);
+        transform: rotateZ(0deg) scale(1.1) translateX(var(--slide-distance)) translateY(0) translateZ(0);
     }
   
     80%{
         transform-origin: var(--slide-distance);
         opacity: 0.3;
-        transform: rotateZ(0deg) scale(0.3) translateX(var(--slide-distance)) translateY(0);
+        transform: rotateZ(0deg) scale(0.3) translateX(var(--slide-distance)) translateY(0) translateZ(0);
     }
 
     100%{
         transform-origin: var(--slide-distance);
         opacity: 0;
-        transform: rotateZ(0deg) scale(0) translateX(var(--slide-distance)) translateY(0);
+        transform: rotateZ(0deg) scale(0) translateX(var(--slide-distance)) translateY(0) translateZ(0);
     }
 }
 

@@ -11,13 +11,8 @@ body{
     background: url('./images/auto-pets-background.png');
     background-color: rgb(0,23,41);
     background-size: 1000px;
-     overflow-x: hidden;
-    /* overflow-y: scroll;  */
+    overflow-x: hidden;
     width: 100%;
-}
-
-.ytp-title{
-    color: red !important;
 }
 
 main{
