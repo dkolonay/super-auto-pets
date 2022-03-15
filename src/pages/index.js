@@ -15,6 +15,7 @@ import * as styles from './index.module.scss';
 //Hero Images
 import logo from '../images/logo.png';
 import backgroundImage from '../images/background-full.jpg';
+import ogImage from '../images/og-image.jpg';
 
 //Components
 import Button from "../components/Button/Button";
@@ -67,11 +68,12 @@ const IndexPage = ({ data }) => {
           },
           {
             property: "og:image",
-            content: logo,
+            content: ogImage,
           },
-          
-
-          
+          {
+            name: "twitter:card",
+            content: "summary_large_image",
+          }
         ]}
       />
 
