@@ -58,7 +58,7 @@
 
     .animalOne,
     .animalTwo{
-        transform: scale(0) translateZ(0);
+        transform: scale(0) translateZ(0) translateX(0);
         height: 150px;
         width: 150px;
         display: inline-block;
@@ -169,6 +169,20 @@ p{
     100%{
   
         transform: scale(1) translateZ(0);
+    }
+}
+@keyframes slideIn{
+    0%{
+        opacity: 0;
+        transform: translateX(-40vw) translateZ(0);
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(-20vw) translateZ(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px) translateZ(0);
     }
 }
 
@@ -297,6 +311,49 @@ transform: translateX(0);
 100%{
     transform: translateX(var(--slide-distance));
 }
+}
+
+@media(max-width: 500px){
+    .animalContainer{
+        .animalOne,
+        .animalTwo{
+            opacity: 1;
+            transform: scale(1) translateZ(0) translateX(-40vw);
+        }
+       
+    
+        &.animating{
+            .damageNumber{
+                animation: fadeNumber 1s ease 3.1s;
+            }
+            &.flipped{
+                .damageNumber{
+                 animation: fadeNumberMirror 1s ease 3.1s;
+                }
+            }
+            .animalImage{
+                animation: attack 0.8s ease 2.8s;
+            }
+            .healthBeforeAttack{
+                animation: swapHealth 0.1s ease 3.2s reverse forwards;
+            }
+            .healthAfterAttack{
+                animation: swapHealth 0.2s ease 3.2s forwards;
+            }
+            &.survive{
+                .animalOne,
+                .animalTwo{
+                    animation: slideIn 1.3s ease forwards, slide 1s linear 1.5s forwards, bob 0.33s ease-in-out 1.5s 3, bounce 0.4s ease 3.5s, popOut 0.4s ease 4.2s forwards;
+                }
+            }
+            &.faint{
+                .animalOne,
+                .animalTwo{
+                    animation: slideIn 1.3s ease forwards, slide 1s linear 1.5s forwards, bob 0.33s ease-in-out 1.5s 3, fly 0.2s ease-out 3.3s forwards;
+                }
+            }
+        }
+    }
 }
 
 

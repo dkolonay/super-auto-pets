@@ -82,7 +82,7 @@ const Battle = ({ data }) => {
                 setSecondAnimal({ animalImage: animals[animalTwo], attack: secondAnimalAttack, health: secondAnimalHealth })
                 setOutcome(outcome);
                 setAnimating(false);
-            }, 4500)
+            }, 5000)
         }
         else  {
             timeout = setTimeout(() => {
