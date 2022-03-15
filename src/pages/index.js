@@ -1,12 +1,13 @@
 //React
 import * as React from "react";
 import { useState, useRef, useEffect, Fragment } from "react";
+import Helmet from "react-helmet";
 
 //Gatsby
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-// import Helmet from "react-helmet";
+
 
 //Styles
 import * as styles from './index.module.scss';
@@ -22,8 +23,9 @@ import Battle from "../components/Battle/Battle";
 const IndexPage = ({ data }) => {
   const [heroLoaded, setHeroLoaded] = useState(false);
   const imageRef = useRef();
+  const {title, description} = data.allSite.nodes[0].siteMetadata;
+  
   const loadHero = () => {
-    console.log('loaded');
     setHeroLoaded(true);
   }
   useEffect(()=>{
@@ -33,10 +35,45 @@ const IndexPage = ({ data }) => {
   }, [])
   return (
     <Fragment>
-      {/* <Helmet
-        title={"Super Auto Pets"}
-      >
-      </Helmet> */}
+      <Helmet
+      htmlAttributes={{
+        lang: 'en'
+      }}
+        title={title}
+        meta={[
+          {
+            name: 'description',
+            content: description,
+          },
+          {
+            property: 'og:title',
+            content: title,
+          },
+          {
+            property: 'og:description',
+            content: description
+          },
+          {
+            property: 'og:type',
+            content: 'website',
+          },
+          {
+            name: 'twitter:title',
+            content: title,
+          },
+          {
+            name: 'twitter:description',
+            content: description,
+          },
+          {
+            property: "og:image",
+            content: logo,
+          },
+          
+
+          
+        ]}
+      />
 
       <main>
         <div className={`${styles.hero} ${heroLoaded ? styles.heroLoaded : ''}`}>
@@ -161,6 +198,14 @@ query MyQuery {
         childImageSharp {
           gatsbyImageData(placeholder: NONE)
         }
+      }
+    }
+  }
+  allSite {
+    nodes {
+      siteMetadata {
+        description
+        title
       }
     }
   }

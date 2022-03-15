@@ -317,11 +317,9 @@ transform: translateX(0);
     .animalContainer{
         .animalOne,
         .animalTwo{
-            opacity: 1;
             transform: scale(1) translateZ(0) translateX(-40vw);
         }
        
-    
         &.animating{
             .damageNumber{
                 animation: fadeNumber 1s ease 3.1s;
@@ -359,7 +357,7 @@ transform: translateX(0);
 
 @media(max-width: 420px){
     :root{
-        --slide-distance: 50px;
+        --slide-distance: 55px;
     }
     .animalContainer{
         height: 130px;
