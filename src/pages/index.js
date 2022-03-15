@@ -1,25 +1,22 @@
 //React
 import * as React from "react";
 import { useState, useRef, useEffect, Fragment } from "react";
-import Helmet from "react-helmet";
 
 //Gatsby
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-
-
 //Styles
 import * as styles from './index.module.scss';
 
-//Hero Images
+//Images
 import logo from '../images/logo.png';
 import backgroundImage from '../images/background-full.jpg';
-import ogImage from '../images/og-image.jpg';
 
 //Components
 import Button from "../components/Button/Button";
 import Battle from "../components/Battle/Battle";
+import Seo from "../components/Seo";
 
 const IndexPage = ({ data }) => {
   const [heroLoaded, setHeroLoaded] = useState(false);
@@ -29,55 +26,14 @@ const IndexPage = ({ data }) => {
   const loadHero = () => {
     setHeroLoaded(true);
   }
-  console.log(ogImage)
   useEffect(()=>{
     if(imageRef.current?.complete){
       loadHero();
     } 
   }, [])
-  return (
+  return ( 
     <Fragment>
-      <Helmet
-      htmlAttributes={{
-        lang: 'en'
-      }}
-        title={title}
-        meta={[
-          {
-            name: 'description',
-            content: description,
-          },
-          {
-            property: 'og:title',
-            content: title,
-          },
-          {
-            property: 'og:description',
-            content: description
-          },
-          {
-            property: 'og:type',
-            content: 'website',
-          },
-          {
-            name: 'twitter:title',
-            content: title,
-          },
-          {
-            name: 'twitter:description',
-            content: description,
-          },
-          {
-            property: "og:image",
-            content: ogImage,
-          },
-          {
-            name: "twitter:card",
-            content: "summary_large_image",
-          }
-        ]}
-      />
-
+      <Seo title={title} description={description}/>
       <main>
         <div className={`${styles.hero} ${heroLoaded ? styles.heroLoaded : ''}`}>
           <img className={styles.logoTitle} src={logo} alt="Super Auto Pets"></img>

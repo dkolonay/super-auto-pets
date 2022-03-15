@@ -13,9 +13,11 @@ const generateStat = (max, offset) => {
 }
 
 const Battle = ({ data }) => {
+    //Fetch image data from graphql
     const animals = data.allFile.edges.map((item) => {
         return item.node.childImageSharp.gatsbyImageData
     });
+    //Always start the page with turtle vs. puppy 🐢💥🐶 
     const starters = animals.filter((animal)=>{
         return animal.images.fallback.src.includes('Turtle') || animal.images.fallback.src.includes('Puppy')
     })
@@ -24,7 +26,6 @@ const Battle = ({ data }) => {
     const [secondAnimal, setSecondAnimal] = useState({ animalImage: starters[0], attack: 25, health: 20 });
     const [outcome, setOutcome] = useState('Tie');
     useEffect(() => {
-
         let timeout;
         if (animating) {
             timeout = setTimeout(() => {
@@ -69,15 +70,15 @@ const Battle = ({ data }) => {
                 if (outcomeValue === 1) {
                     secondAnimalAttack = generateStat(firstAnimalHealth - 1, 0);
                     secondAnimalHealth = generateStat(firstAnimalAttack, 0)
-                    outcome = 'Left Wins'
+                    outcome = 'Left Wins';
                 } else if (outcomeValue === 2) {
                     secondAnimalAttack = generateStat(50 - firstAnimalHealth, firstAnimalHealth);
                     secondAnimalHealth = generateStat(firstAnimalAttack, 0);
-                    outcome = 'Tie'
+                    outcome = 'Tie';
                 } else if (outcomeValue === 3) {
                     secondAnimalAttack = generateStat(50 - firstAnimalHealth, firstAnimalHealth);
                     secondAnimalHealth = generateStat(50 - firstAnimalAttack, firstAnimalAttack)
-                    outcome = 'Right Wins'
+                    outcome = 'Right Wins';
                 }
 
 
@@ -94,9 +95,10 @@ const Battle = ({ data }) => {
 
         }
         return () => { clearTimeout(timeout) }
-    }, [animating])
-
+    }, [animating, animals])
     return (
+        //I'm not sure if aria-hidden is the proper way to handle this,
+        //but in testing, it was useless and confusing to end up here with a screen reader.
         <div aria-hidden="true" className={styles.battle}>
             <Animal
                 id={'animalOne'}

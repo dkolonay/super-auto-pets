@@ -20,7 +20,6 @@ const Animal = ({ id, animating, animalImage, attack, health, damageTaken, outco
     if (outcome === 'Right Wins' && id === 'animalTwo') {
         outcomeAnimation = styles.survive;
     } 
-
     return (
         <div className={`${styles.animalContainer} ${outcomeAnimation} ${id === 'animalTwo' ? styles.flipped : ''} ${animating ? styles.animating : ''}`}>
             <div className={className}>
