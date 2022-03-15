@@ -17,8 +17,8 @@ const Battle = ({ data }) => {
         return item.node.childImageSharp.gatsbyImageData
     });
     const [animating, setAnimating] = useState(false);
-    const [firstAnimal, setFirstAnimal] = useState({ animalImage: animals[75], attack: 22, health: 24 });
-    const [secondAnimal, setSecondAnimal] = useState({ animalImage: animals[52], attack: 25, health: 20 });
+    const [firstAnimal, setFirstAnimal] = useState({ animalImage: animals[77], attack: 22, health: 24 });
+    const [secondAnimal, setSecondAnimal] = useState({ animalImage: animals[55], attack: 25, health: 20 });
     const [outcome, setOutcome] = useState('Tie');
     useEffect(() => {
 

@@ -32,7 +32,7 @@
             animation: fadeNumber 1s ease 2.1s;
         }
         .animalImage{
-            animation: attack 0.5s ease 1.8s;
+            animation: attack 0.8s ease 1.8s;
         }
         .healthBeforeAttack{
             animation: swapHealth 0.1s ease 2.2s reverse forwards;
@@ -43,13 +43,13 @@
         &.survive{
             .animalOne,
             .animalTwo{
-                animation: popIn 0.3s ease forwards, slide 1s linear 0.5s forwards, bob 0.33s ease-in-out 0.5s 3, bounce 0.4s ease 2.3s, popOut 0.4s ease 3s forwards;
+                animation: popIn 0.3s ease forwards, slide 1s linear 0.5s forwards, bob 0.33s ease-in-out 0.5s 3, bounce 0.4s ease 2.5s, popOut 0.4s ease 3.2s forwards;
             }
         }
         &.faint{
             .animalOne,
             .animalTwo{
-                animation: popIn 0.3s ease forwards, slide 1s linear 0.5s forwards, bob 0.33s ease-in-out 0.5s 3, fly 0.2s ease-out 2.2s forwards;
+                animation: popIn 0.3s ease forwards, slide 1s linear 0.5s forwards, bob 0.33s ease-in-out 0.5s 3, fly 0.2s ease-out 2.3s forwards;
             }
         }
         
@@ -58,7 +58,6 @@
 
     .animalOne,
     .animalTwo{
-        opacity: 0;
         transform: scale(0) translateZ(0);
         height: 150px;
         width: 150px;
@@ -155,45 +154,45 @@ p{
 
 @keyframes popIn {
     0%{
-        opacity: 0;
+    
         transform: scale(0) translateZ(0);
     }
     20%{
-        opacity: 1; 
+     
         transform: scale(0.3) translateZ(0);
     }
     80%{
-        opacity: 1;
+
         transform: scale(1.1) translateZ(0); 
     }
 
     100%{
-        opacity: 1;
+  
         transform: scale(1) translateZ(0);
     }
 }
 
 @keyframes popOut {
     0%{
-        transform-origin: var(--slide-distance);
-        opacity: 1;
+        transform-origin: right;
+       
         transform: rotateZ(0deg) scale(1) translateX(var(--slide-distance)) translateY(0) translateZ(0);
     }
     30%, 50%{
-        transform-origin: var(--slide-distance);
-        opacity: 1; 
+        transform-origin: right;
+    
         transform: rotateZ(0deg) scale(1.1) translateX(var(--slide-distance)) translateY(0) translateZ(0);
     }
   
     80%{
-        transform-origin: var(--slide-distance);
-        opacity: 0.3;
+        transform-origin: right;
+  
         transform: rotateZ(0deg) scale(0.3) translateX(var(--slide-distance)) translateY(0) translateZ(0);
     }
 
     100%{
-        transform-origin: var(--slide-distance);
-        opacity: 0;
+        transform-origin: right;
+
         transform: rotateZ(0deg) scale(0) translateX(var(--slide-distance)) translateY(0) translateZ(0);
     }
 }
@@ -234,15 +233,15 @@ p{
         transform: rotateZ(0deg) translateX(0%) scale(-1, 1);
     }
     20%{
-        transform: rotateZ(-15deg) translateX(-20%) scale(-1, 1);
+        transform: rotateZ(15deg) translateX(-20%) scale(-1, 1);
     }
-    40%{
-        transform: rotateZ(-15deg) translateX(-20%) scale(-1, 1);
+    45%{
+        transform: rotateZ(15deg) translateX(-20%) scale(-1, 1);
     }
     50% {
         transform: rotateZ(0deg) translateX(50%) scale(-1, 1);
     }
-    80%{
+    75%{
         transform: rotateZ(0deg) translateX(50%) scale(-1, 1);
     }
     100%{
