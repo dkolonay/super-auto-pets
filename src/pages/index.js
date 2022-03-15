@@ -29,6 +29,7 @@ const IndexPage = ({ data }) => {
   const loadHero = () => {
     setHeroLoaded(true);
   }
+  console.log(ogImage)
   useEffect(()=>{
     if(imageRef.current?.complete){
       loadHero();
@@ -90,6 +91,7 @@ const IndexPage = ({ data }) => {
             src="https://www.youtube.com/embed/ggRELN8KyHs/rel-0"
             title="Super Auto Pets Trailer"
             frameBorder="0"
+            rel="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
