@@ -10,7 +10,6 @@ import * as styles from './404.module.scss';
 //Images
 import Turtle from '../images/pets/Turtle.png';
 
-
 const NotFoundPage = ({ location }) => {
   return (
     <main>

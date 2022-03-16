@@ -10,51 +10,51 @@ import { StaticImage } from "gatsby-plugin-image";
 import * as styles from './index.module.scss';
 
 //Images
-import logo from '../images/logo.png';
+import logo from '../images/super-auto-pets-logo.png';
 import backgroundImage from '../images/background-full.jpg';
 
 //Components
 import Button from "../components/Button/Button";
 import Battle from "../components/Battle/Battle";
+import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
+import Footer from "../components/Footer/Footer";
 import Seo from "../components/Seo";
 
 const IndexPage = ({ data }) => {
   const [heroLoaded, setHeroLoaded] = useState(false);
   const imageRef = useRef();
-  const {title, description} = data.allSite.nodes[0].siteMetadata;
-  
+  const { title, description } = data.allSite.nodes[0].siteMetadata;
+
   const loadHero = () => {
     setHeroLoaded(true);
   }
-  useEffect(()=>{
-    if(imageRef.current?.complete){
+  useEffect(() => {
+    if (imageRef.current?.complete) {
       loadHero();
     } 
   }, [])
-  return ( 
+  return (
     <Fragment>
-      <Seo title={title} description={description}/>
+      <Seo title={title} description={description} />
       <main>
-        <div className={`${styles.hero} ${heroLoaded ? styles.heroLoaded : ''}`}>
+        <section className={`${styles.hero} ${heroLoaded ? styles.heroLoaded : ''}`}>
           <img className={styles.logoTitle} src={logo} alt="Super Auto Pets"></img>
           <Battle data={data} />
           <img src={backgroundImage} alt="Forest Background" ref={imageRef} className={styles.backgroundImage} onLoad={loadHero}></img>
-        </div>
-
-        <section className={styles.videoContainer} >
-          <h2>Watch the traier</h2>
-          <iframe
-            src="https://www.youtube.com/embed/ggRELN8KyHs/rel-0"
-            title="Super Auto Pets Trailer"
-            frameBorder="0"
-            rel="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
         </section>
 
+        <VideoPlayer
+          title="Super Auto Pets Trailer"
+          url="https://www.youtube.com/embed/ggRELN8KyHs"
+          params={{
+            rel: '0',
+            color: 'white'
+          }
+          }
+        />
+
         <section className={styles.linksSection}>
-          <h2 >Play it Now!</h2>
+          <h2>Play it Now!</h2>
           <div className={`${styles.buttonRow} ${styles.play}`}>
             <a href="https://store.steampowered.com/app/1714040/Super_Auto_Pets/" className={styles.buttonGroup}>
               <Button >
@@ -104,7 +104,7 @@ const IndexPage = ({ data }) => {
         </section>
 
         <section className={styles.linksSection}>
-          <h2 >Feel free to contact us about anything</h2>
+          <h2>Feel free to contact us about anything</h2>
           <div className={`${styles.buttonRow} ${styles.contact}`}>
             <a href="mailto:contact@teamwoodgames.com" className={styles.buttonGroup}>
               <Button >
@@ -142,10 +142,7 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
       </main>
-
-      <footer>
-        <p>&copy;Copyright here </p>
-      </footer>
+      <Footer/>
     </Fragment>
   )
 }
