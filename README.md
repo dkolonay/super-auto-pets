@@ -26,8 +26,8 @@ Compile the production build :
 
     gatsby build
 
-Documentation for setting up a development environment  
-https://www.gatsbyjs.com/docs/tutorial/part-0/
+Documentation for setting up a development environment :  
+*https://www.gatsbyjs.com/docs/tutorial/part-0/*
   
 ---  
 <br>
@@ -36,8 +36,14 @@ https://www.gatsbyjs.com/docs/tutorial/part-0/
 
 There are a number of ways to deploy the site listed in the gatsby documentation.  The current build is being hosted through Netlify with auto-updates from a Github repository.
 
-Documentation for deployment  
-https://www.gatsbyjs.com/docs/deploying-and-hosting/
+<br>
+
+After navigating the site to a custom domain, make sure to change the ``siteUrl`` in the gatsby-config.js file.
+
+<br>
+
+Documentation for deployment :  
+*https://www.gatsbyjs.com/docs/deploying-and-hosting/*
 
 ![Turtle](./src/images/pets/Turtle.png)  
 
