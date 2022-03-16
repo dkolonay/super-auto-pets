@@ -1,21 +1,19 @@
 
-Super Auto Pets 🐶💥🐢  
-_by Dan Kolonay_
+# **Super Auto Pets** 🐶💥🐢  
+### _by Dan Kolonay_
+<br>
+This site was built using Gatsby.js and React.
 
-This site was built using Gatsby.js and React.  
+---
+<br>
 
-$~$  
-__ __
-
-$~$ 
-
-**Editing the site**
+## **Editing the site**
 
 Start by navigating to the project folder and installing dependencies :
 
     $ npm install
 
-To edit the site in a local environment, you'll need to install the Gatsby CLI globally :
+To get the most out of editing the site in a local environment, you'll need to install the Gatsby CLI globally :
 
     $ npm install -g gatsby-cli
 
@@ -30,12 +28,11 @@ Compile the production build :
 
 Documentation for setting up a development environment  
 https://www.gatsbyjs.com/docs/tutorial/part-0/
-
-$~$  
-__ __
-
-$~$  
-**Deploying the site**
+  
+---  
+<br>
+ 
+## **Deploying the site**
 
 There are a number of ways to deploy the site listed in the gatsby documentation.  The current build is being hosted through Netlify with auto-updates from a Github repository.
 
