@@ -11,20 +11,20 @@ This site was built using Gatsby.js and React.
 
 Start by navigating to the project folder and installing dependencies :
 
-    $ npm install
+    npm install
 
 To get the most out of editing the site in a local environment, you'll need to install the Gatsby CLI globally :
 
-    $ npm install -g gatsby-cli
+    npm install -g gatsby-cli
 
 Get live updates while editing with gatsby develop and navigating to localhost:8000 in your browser :
 
-    $ gatsby develop
+    gatsby develop
 
 
 Compile the production build :
 
-    $ gatsby build
+    gatsby build
 
 Documentation for setting up a development environment  
 https://www.gatsbyjs.com/docs/tutorial/part-0/
