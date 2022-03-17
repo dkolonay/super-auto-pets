@@ -5,7 +5,8 @@ import Helmet from "react-helmet";
 //Images
 import ogImage from '../images/og-image.jpg';
 
-const Seo = ({title, description})=>{
+
+const Seo = ({title, description, siteUrl})=>{
     return (
         <Helmet
         htmlAttributes={{
@@ -39,7 +40,7 @@ const Seo = ({title, description})=>{
             },
             {
               property: "og:image",
-              content: ogImage,
+              content: `${siteUrl}${ogImage}`,
             },
             {
               name: "twitter:card",

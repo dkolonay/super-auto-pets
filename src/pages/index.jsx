@@ -18,12 +18,12 @@ import Button from "../components/Button/Button";
 import Battle from "../components/Battle/Battle";
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer";
 import Footer from "../components/Footer/Footer";
-import Seo from "../components/Seo";
+import Seo from "../components/Seo"; 
 
 const IndexPage = ({ data }) => {
   const [heroLoaded, setHeroLoaded] = useState(false);
   const imageRef = useRef();
-  const { title, description } = data.allSite.nodes[0].siteMetadata;
+  const { title, description, siteUrl } = data.allSite.nodes[0].siteMetadata;
 
   const loadHero = () => {
     setHeroLoaded(true);
@@ -35,7 +35,7 @@ const IndexPage = ({ data }) => {
   }, [])
   return (
     <Fragment>
-      <Seo title={title} description={description} />
+      <Seo title={title} description={description} siteUrl={siteUrl} />
       <main>
         <section className={`${styles.hero} ${heroLoaded ? styles.heroLoaded : ''}`}>
           <img className={styles.logoTitle} src={logo} alt="Super Auto Pets"></img>
@@ -163,6 +163,7 @@ query MyQuery {
       siteMetadata {
         description
         title
+        siteUrl
       }
     }
   }
