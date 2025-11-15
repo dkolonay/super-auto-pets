@@ -3,6 +3,7 @@
 ### _by Dan Kolonay_
 <br>
 This site was built using Gatsby.js and React.
+This is a personal project for practicing frontend web development and css animations. Super Auto Pets is a mobile game which, at the time I made this site, had a very minimal website to promote their game. I decided it would be fun to make a redesign of the site for practice. This site is not affiliated with Super Auto Pets.
 
 ---
 <br>
